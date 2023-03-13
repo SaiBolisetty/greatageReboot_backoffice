@@ -16,7 +16,7 @@ conn = pymssql.connect(server=db_server, database=db_name,
   
 
 
-  
+#----
 @app.route('/')
 def home():
     return render_template('intro.html')
