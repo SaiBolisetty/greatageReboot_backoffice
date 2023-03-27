@@ -13,10 +13,7 @@ driver = '{SQL Server Native Client 11.0}'
 conn = pymssql.connect(server=db_server, database=db_name,
                        user=db_user, password=db_password)
 
-  
 
-
-#----
 @app.route('/')
 def home():
     return render_template('intro.html')
