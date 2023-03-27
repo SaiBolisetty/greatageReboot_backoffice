@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreatAgeReboot</title>
+    <title>GAR</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link href="./assets/css/global.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/static/GAR color logo 1 (2).svg">
     
   <style>
     html, body {
@@ -114,12 +112,10 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ffffff;
-  width: 300px;
+  background-color: #f9f9f9;
+  min-width: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  margin-left: -100px;
-  margin-top: 0px;
 }
 
 /* Links inside the dropdown */
@@ -137,31 +133,13 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.dropdown-content ul li a:hover
-{background-color: #f1f1f1}
-.sub-list{
-  display: none;
 
-}
-.dropdown-content ul li:hover .sub-list
-{
-   display:inline-block;
-}
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #201782;
 }
-.sub-list ul{
-  display: block;
-}
-.hi{
-  list-style-type: none;
-}
-.text{
-  text-align: center;
-  margin-top: 1px;
-  margin-left: -50px;
-}
+
+
   </style>
   </head>
 <body>
@@ -173,48 +151,15 @@
                         <img src="/static/GARlogo.png" alt="logo-area">
                     </div>
 
-                    <div class="main-head mt-2 ">
-                      <!-- <h1 class="text-center">Module Name</h1> -->
+                    <div class="main-head mt-2 "><h1 class="text-center">Module Name</h1>
                         <h3 class="text-center" >Select Your Table Below</h3>
                     </div>
                     <div class="dropdown">
   <button class="dropbtn">SELECT</button>
   <div class="dropdown-content">
-    <ul class="hi">
-       <li><a href="{{url_for('Index')}}">Activity-table<i class="caret-right"></i></a>
-        <!-- <div class="sub-list">
-          <ul class="hi">
-            <li><p class="text">this changes</p></li>
-            <li><p class="text">feild 1</p></li>
-            <li><p class="text">feild 2</p></li>
-            <li><p class="text">feild 3</p></li>
-          </ul>
-
-         </div> -->
-      </li>
-       <li><a href="{{url_for('Second')}}">Questionniare-table<i class="caret-right"></i></a>
-         <!-- <div class="sub-list">
-          <ul class="hi">
-            <li><p class="text">this changes</p></li>
-            <li><p class="text">feild 1</p></li>
-            <li><p class="text">feild 2</p></li>
-            <li><p class="text">feild 3</p></li>
-          </ul>
-
-         </div> -->
-      </li>
-       <li><a href="{{url_for('Third')}}">Questionary-answer-table<i class="caret-right"></i></a>
-        <!-- <div class="sub-list">
-          <ul class="hi">
-            <li><p class="text">this changes</p></li>
-            <li><p class="text">feild 1</p></li>
-            <li><p class="text">feild 2</p></li>
-            <li><p class="text">feild 3</p></li>
-          </ul>
-
-         </div> -->
-      </li>
-   </ul>
+    <a href="{{url_for('Index')}}">Activity-table<ul><li>You can add lessons</li></ul></a>
+    <a href="{{url_for('Second')}}">Questionniare-table</a>
+    <a href="{{url_for('Third')}}">Questionary-answer-table</a>
   </div>
 </div>
                    

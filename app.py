@@ -36,10 +36,10 @@ def Index():
     cur = conn.cursor()
     if search_query:
         cur.execute(
-            "SELECT id,title,module,ACT.[order],location,primary_icon,caption,action_type,QUESTION_ID,link from rebootdb.activity as ACT WHERE module LIKE %s", ('%' + search_query + '%',))
+            "SELECT id,title,module,ACT.[order],location,primary_icon,caption,action_type,QUESTION_ID from rebootdb.activity as ACT WHERE module LIKE %s", ('%' + search_query + '%',))
     else:
         cur.execute(
-            "SELECT id,title,module,ACT.[order],location,primary_icon,caption,action_type,QUESTION_ID,link FROM rebootdb.activity as ACT")
+            "SELECT id,title,module,ACT.[order],location,primary_icon,caption,action_type,QUESTION_ID FROM rebootdb.activity as ACT")
     data = cur.fetchall()
     cur.close()
 
@@ -59,10 +59,9 @@ def insert():
         caption = request.form['caption']
         Action_type = request.form['action_type']
         Question_ID = request.form['question_id']
-        Content = request.form['content']
         cur = conn.cursor()
-        cur.execute("INSERT INTO rebootdb.activity(title,module,[order],location,primary_icon,caption,action_type,Question_ID,link) VALUES (%s, %s, %s,%s,%s, %s, %s,%s,%s)", (
-            title, module, order, Location, primary_icon, caption, Action_type, Question_ID,Content))
+        cur.execute("INSERT INTO rebootdb.activity(title,module,[order],location,primary_icon,caption,action_type,Question_ID) VALUES (%s, %s, %s,%s,%s, %s, %s,%s)", (
+            title, module, order, Location, primary_icon, caption, Action_type, Question_ID))
 
         conn.commit()
 
@@ -90,8 +89,7 @@ def update():
         primary_icon = request.form['primary_icon']
         caption = request.form['caption'] 
         action_type=request.form['action_type']
-        Question_ID = request.form['question_id'] 
-        Content = request.form['content']# ---------
+        Question_ID = request.form['question_id'] # ---------
         # phone = request.form['phone']
         
         # cur = conn.cursor()
@@ -105,9 +103,9 @@ def update():
 
         cur = conn.cursor()
         cur.execute("""
-        UPDATE rebootdb.activity SET title=%s, module=%s,[order]=%s,[location]=%s,primary_icon=%s,caption=%s,action_type=%s,QUESTION_ID=%s,link=%s
+        UPDATE rebootdb.activity SET title=%s, module=%s,[order]=%s,[location]=%s,primary_icon=%s,caption=%s,action_type=%s,QUESTION_ID=%s
         WHERE id=%s
-        """, (title, module,order,location,primary_icon,caption,action_type,Question_ID,Content, id ))
+        """, (title, module,order,location,primary_icon,caption,action_type,Question_ID, id ))
         conn.commit()
         
         flash("Data Updated Successfully")

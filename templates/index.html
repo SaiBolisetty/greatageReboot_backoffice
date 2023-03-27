@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GreatAgeReboot</title>
+    <title>TechSky</title>
 
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="/static/GAR color logo 1 (2).svg">
     <style>
       body {
         background: linear-gradient(
@@ -18,7 +17,7 @@
             rgba(0, 150, 255, 0.61) 0%,
             rgba(0, 10, 117, 0.61) 100%
           ),
-          url(/static/signinbg.png);
+          url(/static/lotusbg.png);
         background-repeat: no-repeat;
         padding: 60px 0;
         background-size: cover;
@@ -31,45 +30,25 @@
       .tr-1 > td {
         height: 20px;
       }
-      .main-table {
-        padding:40px;
-      }
-      td,th {
-        text-align:center;
-      }
-      .search-icon-btn {
-        border:none;
-        outline:none;
-        border-radius: 30px;
-        padding: 0 10px
-      }
-      th {
-        font-size:26px;
-        color:#ffffff;
-        font-weight:700;
-      }
-      td {
-        font-size:21px;
-        font-weight:400;
-      }
     </style>
   </head>
   <body>
     <!-- The Main Heading Gioes Here -->
     <div class="container-fluid">
-      <h1 class="text-center alert alert-danger">Activity TABLE</h1>
-      <div class="row main-table">
+      <h1 class="text-center alert alert-danger">Questionary TABLE</h1>
+      <div class="row">
+        <div class="col-sm-2"></div>
 <!--  here onwards the sub-head and the to add activity button will be produced -->
         <!-- content goes here -->
-        <div class="col-sm-12">
+        <div class="col-sm-8">
           <h2>
-            Activity List
+            Questionary List
             <button
-              class="btn btn-primary"
+              class="btn btn-primary float-right"
               data-toggle="modal"
               data-target="#myModal"
             >
-              Add Activity
+              Add Question
             </button>
           </h2>
         <!--  Here the searc h entry box will arises-->
@@ -82,7 +61,7 @@
               placeholder="Search..."
             />
             <!-- In above the type is about the field and name is used to acces the database frontend value is the user given vales -->
-            <button class="search-icon-btn" type="submit">Search</button> 
+            <button type="submit">Search</button> 
             <!-- The above button sends the data to  forms -->
           </form>
           <!-- chatgpt query -->
@@ -108,16 +87,15 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col" class="id">id</th> 
-                <th scope="col" class="title">title</th>
-                <th scope="col" class="module">Module</th>
-                <th scope="col" class="order">order</th>
-                <th scope="col" class="location">Location</th>
-                <th scope="col" class="p-icon">Primary_Icon</th>
-                <th scope="col" class="caption">Caption</th>
-                <th scope="col" class="action-type">Action-type</th>
-                <th scope="col" class="q_id">Question_ID</th>
-                <th scope="col" class="q_id">Content</th>
+                <th scope="col">id</th>
+                <th scope="col">title</th>
+                <th scope="col">Module</th>
+                <th scope="col">order</th>
+                <th scope="col">Location</th>
+                <th scope="col">Primary_Icon</th>
+                <th scope="col">Caption</th>
+                <th scope="col">Action-type</th>
+                <th scope="col">Question_ID</th>
               </tr>
             </thead>
             <tbody>
@@ -133,7 +111,6 @@
                  <td>{{row.6}}</td>
                  <td>{{row.7}}</td>
                  <td>{{row.8}}</td>
-                 <td>{{row.9}}</td>
                 
                 <td>
                     <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
@@ -181,7 +158,7 @@
                         name="title"
                         class="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="Enter Title"
+                        placeholder="Enter Full Name"
                       />
                     </div>
 
@@ -192,7 +169,7 @@
                         name="module"
                         class="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="Enter Module"
+                        placeholder="Enter Email"
                       />
                     </div>
 
@@ -203,7 +180,7 @@
                         type="text"
                         class="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="Enter Order"
+                        placeholder="Enter Phone Number"
                       />
                     </div>
                     <div class="form-group">
@@ -213,7 +190,7 @@
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput1"
-                          placeholder="Enter Location"
+                          placeholder="Enter Phone Number"
                         />
                       </div>
                       <div class="form-group">
@@ -223,7 +200,7 @@
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput1"
-                          placeholder="Enter Primary_icon"
+                          placeholder="Enter Phone Number"
                         />
                       </div>
                       <div class="form-group">
@@ -233,7 +210,7 @@
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput1"
-                          placeholder="Enter Caption"
+                          placeholder="Enter Phone Number"
                         />
                       </div>
                       <div class="form-group">
@@ -243,7 +220,7 @@
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput1"
-                          placeholder="Enter Action_type"
+                          placeholder="Enter Phone Number"
                         />
                       </div>
                       <div class="form-group">
@@ -253,17 +230,7 @@
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput1"
-                          placeholder="Enter Question_ID"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label>Content</label>
-                        <input
-                          name="content"
-                          type="text"
-                          class="form-control"
-                          id="exampleFormControlInput1"
-                          placeholder="Content"
+                          placeholder="Enter Phone Number"
                         />
                       </div>
 
@@ -344,7 +311,7 @@
                               name="id"
                               class="form-control"
                               id="exampleFormControlInput1"
-                              placeholder="Enter ID"
+                              placeholder="Enter Full Name"
                             disabled/>
                           </div>
                         <div class="form-group">
@@ -355,7 +322,7 @@
                             name="title"
                             class="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="Enter title"
+                            placeholder="Enter Full Name"
                           />
                         </div>
 
@@ -367,7 +334,7 @@
                             name="module"
                             class="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="Enter Module"
+                            placeholder="Enter Email"
                           />
                         </div>
 
@@ -379,7 +346,7 @@
                             type="text"
                             class="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="Enter Order"
+                            placeholder="Enter Phone Number"
                           />
                         </div>
                         <div class="form-group">
@@ -401,7 +368,7 @@
                               type="text"
                               class="form-control"
                               id="exampleFormControlInput1"
-                              placeholder="Enter Primary_Icon"
+                              placeholder="Enter Phone Number"
                             />
                           </div>
                           <div class="form-group">
@@ -412,18 +379,18 @@
                               type="text"
                               class="form-control"
                               id="exampleFormControlInput1"
-                              placeholder="Enter Caption"
+                              placeholder="Enter Phone Number"
                             />
                           </div>
                           <div class="form-group">
-                            <label>Action_type</label>
+                            <label>Actin_type</label>
                             <input
                               value="{{row.7}}"
                               name="action_type"
                               type="text"
                               class="form-control"
                               id="exampleFormControlInput1"
-                              placeholder="Enter Action-type"
+                              placeholder="Enter Phone Number"
                             />
                           </div>
                           <div class="form-group">
@@ -434,18 +401,7 @@
                               type="text"
                               class="form-control"
                               id="exampleFormControlInput1"
-                              placeholder="Enter question_id"
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label>Content</label>
-                            <input
-                              name="content"
-                              type="text"
-                              class="form-control"
-                              id="exampleFormControlInput1"
-                              placeholder="Content"
-                              value="{{row.9}}"
+                              placeholder="Enter Phone Number"
                             />
                           </div>
                           <!-- <div class="form-group">
@@ -477,6 +433,7 @@
         </div> -->
         <!-- Content ends here-->
 
+        <div class="col-sm-2"></div>
       </div>
     </div>
 
